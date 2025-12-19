@@ -1,0 +1,37 @@
+name: Pervasive AI PR Scan
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+  pull-requests: read
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+steps:
+  - name: Checkout PR code
+    uses: actions/checkout@v4
+  - name: Show PR context
+    run: |
+      echo "Repository: $GITHUB_REPOSITORY"
+      echo "PR number: ${{ github.event.pull_request.number }}"
+      echo "Branch: ${{ github.event.pull_request.head.ref }}"
+  - name: Run dummy scan
+    run: |
+      echo '{ "status": "pass", "score": 85, "high": 0, "medium": 2, "low": 5 }' > scan_result.json
+  - name: Publish scan summary
+    run: |
+      STATUS=$(jq -r '.status' scan_result.json)
+      SCORE=$(jq -r '.score' scan_result.json)
+      HIGH=$(jq -r '.high' scan_result.json)
+      MEDIUM=$(jq -r '.medium' scan_result.json)
+      LOW=$(jq -r '.low' scan_result.json)
+
+      echo "## Pervasive AI Scan Results" >> $GITHUB_STEP_SUMMARY
+      echo "- **Status:** $STATUS" >> $GITHUB_STEP_SUMMARY
+      echo "- **Score:** $SCORE / 100" >> $GITHUB_STEP_SUMMARY
+      echo "- **Findings:** High=$HIGH, Medium=$MEDIUM, Low=$LOW" >> $GITHUB_STEP_SUMMARY
+
+
+
+
