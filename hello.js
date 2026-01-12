@@ -153,7 +153,6 @@ ${changedFiles
       `- [\`${f.path}\`](https://github.com/${owner}/${repo}/blob/main/${f.path}) (${f.status})`
   )
   .join("\n")}
-
 ### Vulnerable Files
 ${result.files
   .map(
