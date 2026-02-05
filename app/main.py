@@ -4,7 +4,6 @@ def greet(name):
   """
   print(f"Hello, {name}!") 
 
-  
 
 if __name__ == "__main__":
   # Call the greet function with a sample name
