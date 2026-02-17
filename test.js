@@ -13,7 +13,6 @@ import { getInstallationOctokit } from "./githubAuth.js";
     console.log("PR is closed, skipping");
     return;
   }
-
   if (!event.installation?.id) {
     console.log("No installation found, skipping");
     return;
