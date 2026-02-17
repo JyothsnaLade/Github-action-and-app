@@ -18,3 +18,4 @@ jobs:
           console-url: https://console.pervaziv.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
