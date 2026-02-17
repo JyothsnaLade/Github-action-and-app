@@ -1,0 +1,20 @@
+name: Cortex Code Review
+
+on:
+  pull_request:
+    types: [opened, closed]
+  issue_comment:
+    types: [created]
+
+jobs:
+  cortex-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: your-org/cortex-action@main
+        with:
+          cortex-api-key: ${{ secrets.CORTEX_API_KEY }}
+          backend-url: ${{ secrets.BACKEND_URL }}
+          console-url: https://console.pervaziv.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

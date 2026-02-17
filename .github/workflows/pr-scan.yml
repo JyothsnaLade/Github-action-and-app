@@ -1,5 +1,4 @@
 name: Pervazive AI PR Scan
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -15,7 +14,6 @@ jobs:
     steps:
       - name: Checkout PR code
         uses: actions/checkout@v4
-
       - name: Show PR context
         run: |
           echo "Repository: $GITHUB_REPOSITORY"
