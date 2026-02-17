@@ -18,7 +18,6 @@ import { getInstallationOctokit } from "./githubAuth.js";
     console.log("No installation found, skipping");
     return;
   }
-
   console.log("Processing PR action:", action);
 
   const installationId = event.installation.id;
