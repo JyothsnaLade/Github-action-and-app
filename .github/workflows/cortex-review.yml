@@ -9,12 +9,13 @@ on:
 jobs:
   cortex-review:
     runs-on: ubuntu-latest
-
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
     steps:
       - uses: jyothsnalade/cortex-action@v1
-        with:
-          cortex-api-key: ${{ secrets.CORTEX_API_KEY }}
-          backend-url: ${{ secrets.BACKEND_URL }}
-          console-url: https://console.pervaziv.com
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ← add this
+        with:
+          console-url: https://console.pervaziv.com
