@@ -15,3 +15,7 @@ jobs:
       contents: read
     steps:
       - uses: jyothsnalade/cortex-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ← add this
+        with:
+          console-url: https://console.pervaziv.com
