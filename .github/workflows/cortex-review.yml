@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: jyothsnalade/cortex-action@main
+      - uses: jyothsnalade/cortex-action@v1
         with:
           cortex-api-key: ${{ secrets.CORTEX_API_KEY }}
           backend-url: ${{ secrets.BACKEND_URL }}
