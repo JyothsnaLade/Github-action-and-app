@@ -1,11 +1,12 @@
 name: Cortex Code Review
 
 on:
-  pull_request:
-    types: [opened, closed]
-  issue_comment:
-    types: [created]
-
+  push:
+    branches:
+      - main        # triggers on merge to main
+  schedule:
+    - cron: '0 0 * * *'   # runs every day at midnight
+  
 jobs:
   cortex-review:
     runs-on: ubuntu-latest
@@ -16,6 +17,6 @@ jobs:
     steps:
       - uses: jyothsnalade/cortex-action@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # ← add this
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           console-url: https://console.pervaziv.com
