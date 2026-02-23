@@ -1,12 +1,12 @@
 name: Cortex Code Review
 
 on:
-  on:
   push:
     branches:
       - main        # triggers on merge to main
   schedule:
     - cron: '0 0 * * *'   # runs every day at midnight
+  
 jobs:
   cortex-review:
     runs-on: ubuntu-latest
