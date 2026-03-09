@@ -1,4 +1,4 @@
-name: Cortex Code Review
+name: Pervaziv AI Code Review
 
 on:
   push:
