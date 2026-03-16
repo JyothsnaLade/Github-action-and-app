@@ -16,5 +16,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          backend-url: 'https://xxxx.ngrok-free.app/runBotScan'
+          backend-url: 'https://trudi-synoptistic-meanspiritedly.ngrok-free.dev/runBotScan'
        
