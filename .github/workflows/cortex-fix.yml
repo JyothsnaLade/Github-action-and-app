@@ -1,18 +1,20 @@
 name: Cortex Fix
-
 on:
-  pull_request:
-    branches:
-      - main
-
+  workflow_run:
+    workflows: ["Pervaziv AI Code Review"]  # ← triggers after scan completes
+    types:
+      - completed
 jobs:
   cortex-fix:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
+      actions: read   
     steps:
       - uses: JyothsnaLade/cortex-fix-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          backend-url: 'https://xxxx.ngrok-free.app/runBotScan'
        
