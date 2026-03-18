@@ -4,9 +4,10 @@ metadata:
   name: insecure-app
 spec:
   replicas: 1
+  strategy: {}
   selector:
     matchLabels:
-      app: insecure-app 
+      app: insecure-app
   template:
     metadata:
       labels:
