@@ -3,6 +3,6 @@ import sqlite3
 def get_user(user_id):
     conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
-    query = "SELECT * FROM users WHERE id = " + user_id
+    query = "SELECT * FROM users WHERE id = + %s"
     cursor.execute(query, (user_id,))
     return cursor.fetchone() 
