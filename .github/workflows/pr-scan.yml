@@ -63,3 +63,4 @@ jobs:
           echo "- **Status:** $STATUS" >> $GITHUB_STEP_SUMMARY
           echo "- **Score:** $SCORE / 100" >> $GITHUB_STEP_SUMMARY
           echo "- **Findings:** High=$HIGH, Medium=$MEDIUM, Low=$LOW" >> $GITHUB_STEP_SUMMARY
+
