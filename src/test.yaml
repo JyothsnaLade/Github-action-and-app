@@ -4,7 +4,6 @@ metadata:
   name: insecure-app
 spec:
   replicas: 1
-  strategy: {}
   selector:
     matchLabels:
       app: insecure-app
@@ -18,12 +17,3 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1000
-            allowPrivilegeEscalation: false
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1000
-            allowPrivilegeEscalation: false
-        
