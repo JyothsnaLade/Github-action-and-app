@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: insecure-app
+      app: insecure-app
   template:
     metadata:
       labels:
