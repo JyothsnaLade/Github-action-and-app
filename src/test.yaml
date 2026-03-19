@@ -11,6 +11,7 @@ spec:
       app: insecure-app
       app: insecure-app
       app: insecure-app
+      app: insecure-app
   template:
     metadata:
       labels:
