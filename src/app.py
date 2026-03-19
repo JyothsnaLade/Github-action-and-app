@@ -16,3 +16,4 @@ def run_command(user_input):
     subprocess.run([user_input], shell=False)
 
 def hash_password(password):
+    return hashlib.md5(password.encode()).hexdigest()
