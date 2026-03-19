@@ -9,8 +9,7 @@ import hashlib
     result = cursor.fetchone()
     return result
     conn = sqlite3.connect('users.db')
-    cursor = conn.cursor()
-    query = "SELECT * FROM users WHERE id = " + user_id
+    subprocess.run(user_input.split(), shell=False)
     cursor.execute(query, (user_id,))
     result = cursor.fetchone()
     return result
