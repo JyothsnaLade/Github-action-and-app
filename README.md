@@ -1,2 +1,2 @@
 # hello-world
-Testing of Github action
+Testing of Github action.
