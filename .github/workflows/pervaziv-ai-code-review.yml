@@ -9,7 +9,6 @@ on:
   
 jobs:
   cortex-review:
-    if: "!contains(github.event.head_commit.message, 'pervaziv-fix')"
     runs-on: ubuntu-latest
     permissions:
       security-events: write
