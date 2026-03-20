@@ -21,5 +21,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:
           console-url: https://console.pervaziv.com
-          enable-fix-pr: 'true'
-          backend-url: 'https://trudi-synoptistic-meanspiritedly.ngrok-free.dev/runBotScan'
+          
+          
