@@ -13,6 +13,7 @@ jobs:
       actions: read
       contents: write
       pull-requests: write
+      checks: write 
     steps:
       - uses: jyothsnalade/cortex-action@v1
         env:
