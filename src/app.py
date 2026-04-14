@@ -1,4 +1,4 @@
-import os
+console.log("hello world")
 import sys
 import sqlite3
 import subprocess
