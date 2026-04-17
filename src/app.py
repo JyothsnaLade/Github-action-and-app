@@ -7,13 +7,13 @@ import hashlib
 def get_user(user_id):
     conn = sqlite3.connect('users.db')
     cursor = conn.cursor()
-    query = "SELECT * FROM users WHERE id = " + user_id
+    query = "SELECT * FROM users WHERE id = ?"
     cursor.execute(query, (user_id,))
     result = cursor.fetchone()
     return result
 
 def run_command(user_input):
-    subprocess.run([user_input], shell=False)
+    subprocess.run(user_input.split(), shell=False)
 
 def hash_password(password):
-    return hashlib.md5(password.encode()).hexdigest()
+    return hashlib.sha256(password.encode()).hexdigest()
